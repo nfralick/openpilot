@@ -75,6 +75,8 @@ struct CarEvent @0x9b1657f34caf3ad3 {
     vehicleModelInvalid @50;
     controlsFailed @51;
     sensorDataInvalid @52;
+    manualSteeringRequired @53;
+    manualSteeringRequiredBlinkersOn @54;
   }
 }
 
@@ -119,6 +121,7 @@ struct CarState {
   leftBlinker @20 :Bool;
   rightBlinker @21 :Bool;
   genericToggle @23 :Bool;
+  lkMode @26 :Bool;
 
   # lock info
   doorOpen @24 :Bool;
