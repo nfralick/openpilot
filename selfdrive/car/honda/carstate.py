@@ -336,8 +336,11 @@ class CarState(object):
     # when user presses LKAS button on steering wheel
     if self.cruise_setting == 1:
       if cp.vl["SCM_BUTTONS"]["CRUISE_SETTING"] == 0:
-        self.lkMode ^= 1
-        
+        if self.lkMode:
+          self.lkMode = False
+        else:
+          self.lkMode = True 
+          
     # No idea why arne/kegman moved these, but I'll try it too.
     self.prev_cruise_setting = self.cruise_setting
     self.cruise_setting = cp.vl["SCM_BUTTONS"]['CRUISE_SETTING']
